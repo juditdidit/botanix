@@ -1,14 +1,12 @@
 @import 'styles/variables';
 
-$card-size: 270px;
-$gutter: 18px;
-
 main {
     padding-top: 40px;
 }
 
 .container {
     width: $card-size * 2 + $gutter;
+    margin: auto;
 }
 
 .plant-list {
@@ -18,7 +16,7 @@ main {
 }
 
 .plant-card {
-    background-color: #D9D9D9;
+    background-color: $card-bg;
     border-radius: 12px;
     width: $card-size;
     overflow: hidden;
@@ -32,8 +30,8 @@ main {
     }
 
     .main {
-        padding: 10px 14px 40px;
-        color: #59684A;
+        padding: 10px 14px;
+        color: $card-color;
 
         .location {
             text-transform: uppercase;
@@ -49,7 +47,15 @@ main {
             font-family: $italics;
             font-size: 0.85rem;
             letter-spacing: 0.025rem;
-            color: #958457;
+            color: $card-color-alt;
+        }
+
+        .toxicity {
+            margin-top: 20px;
+
+            span + span {
+                margin-left: 10px;
+            }
         }
     }
 }

@@ -50,9 +50,14 @@ main {
             color: $card-color-alt;
         }
 
-        .toxicity {
+        .specs {
             margin-top: 20px;
+            // display: flex;
+            // justify-content: space-between;
+        }
 
+        .toxicity,
+        .needs {
             span + span {
                 margin-left: 10px;
             }

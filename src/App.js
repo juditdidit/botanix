@@ -6,8 +6,9 @@ const plants = [
         name: "Monty",
         latin: "Monstera deliciosa",
         location: "Living room floor",
-        sunExposure: "???",
-        water: "???",
+        light: "bright, indirect",
+        water: "moderate",
+        soil: "good drainage",
         toxicity: {
             cats: true,
             dogs: true,
@@ -20,8 +21,9 @@ const plants = [
         name: "Bethany",
         latin: "Pothos; Epipremmum aureum",
         location: "Bookshelf",
-        sunExposure: "???",
-        water: "???",
+        light: "bright, indirect",
+        water: "moderate",
+        soil: "well-draining, rich",
         toxicity: {
             cats: true,
             dogs: true,
@@ -34,8 +36,9 @@ const plants = [
         name: "Snek",
         latin: "Dracaena trifasciata",
         location: "Bedroom",
-        sunExposure: "???",
-        water: "???",
+        light: "any light",
+        water: "infrequent",
+        soil: "free-draining",
         toxicity: {
             cats: true,
             dogs: true,
@@ -48,8 +51,9 @@ const plants = [
         name: "Arrowhead",
         latin: "Syngonium podophyllum",
         location: "Bedroom",
-        sunExposure: "???",
-        water: "???",
+        light: "bright, indirect",
+        water: "moderate",
+        soil: "light, fast-draining",
         toxicity: {},
         photo: "arrowhead.jpg",
     },
@@ -87,8 +91,14 @@ function PlantCard({ plant }) {
                 <div className="name">{plant.name}</div>
                 <em className="latin">{plant.latin}</em>
 
-                <div className="toxicity">
-                    {toxicityList}
+                <div className="specs">
+                    <div className="toxicity">
+                        {toxicityList}
+                    </div>
+                    <div className="needs">
+                        <span className="water">{plant.water}</span>
+                        <span className="light">{plant.light}</span>
+                    </div>
                 </div>
             </div>
         </div>

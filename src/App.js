@@ -21,7 +21,7 @@ const plants = [
         id: 2,
         name: "Bethany the Golden Pothos",
         latin: "Epipremmum aureum",
-        location: "Bookshelf",
+        location: "Top of bookshelf",
         light: "bright, indirect",
         water: "moderate",
         soil: "well-draining, rich",
@@ -68,7 +68,7 @@ function App() {
     return (
         <main>
             <div className="container">
-                <h1>Botanika</h1>
+                <h1>Botanix</h1>
                 <span className="subtitle">A Botanical Journal</span>
                 <div className="plant-list">{plantList}</div>
             </div>

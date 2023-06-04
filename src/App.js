@@ -11,8 +11,8 @@ const plants = [
         water: "moderate",
         soil: "good drainage",
         toxicity: {
-            cats: true,
             dogs: true,
+            cats: true,
             kids: false,
         },
         photo: "monstera.jpg",
@@ -26,8 +26,8 @@ const plants = [
         water: "moderate",
         soil: "well-draining, rich",
         toxicity: {
-            cats: true,
             dogs: true,
+            cats: true,
             kids: true,
         },
         photo: "pothos.jpg",
@@ -41,8 +41,8 @@ const plants = [
         water: "infrequent",
         soil: "free-draining",
         toxicity: {
-            cats: true,
             dogs: true,
+            cats: true,
             kids: false,
         },
         photo: "snakeplant.jpg",
@@ -80,11 +80,11 @@ function PlantCard({ plant }) {
     const toxicityList = Object.keys(plant.toxicity).map((icon) => {
         if (plant.toxicity[icon]) {
             return (
-                <span key={icon}>
-                    {icon === "cats" && <CatIcon />}
-                    {icon === "dogs" && <DogIcon />}
-                    {icon === "kids" && <KidIcon />}
-                </span>
+                <>
+                    {icon === "dogs" && <DogIcon key={icon} />}
+                    {icon === "cats" && <CatIcon key={icon} />}
+                    {icon === "kids" && <KidIcon key={icon} />}
+                </>
             );
         } else {
             return null;

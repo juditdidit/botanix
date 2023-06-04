@@ -4,6 +4,23 @@ main {
     padding-top: 40px;
 }
 
+h1 {
+    color: $secondary;
+    font-size: 2rem;
+    font-family: $italics;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+}
+
+.subtitle {
+    display: block;
+    color: $card-bg;
+    font-size: .875rem;
+    line-height: 1;
+    margin-bottom: 34px;
+}
+
 .container {
     width: $card-size * 2 + $gutter;
     margin: auto;
@@ -17,6 +34,7 @@ main {
 
 .plant-card {
     background-color: $card-bg;
+    background-image: url('./images/card-background.jpg');
     border-radius: 12px;
     width: $card-size;
     overflow: hidden;
@@ -30,24 +48,31 @@ main {
     }
 
     .main {
-        padding: 10px 14px;
+        padding: 14px;
         color: $card-color;
 
         .location {
+            margin-bottom: 2px;
+            display: block;
             text-transform: uppercase;
-            font-size: 0.65rem;
-            font-weight: 500;;
+            font-size: 0.625rem;
+            line-height: 1;
+            font-weight: 600;
         }
 
         .name {
-            font-size: 1.5rem;
+            font-size: 1.875rem;
+            line-height: 1;
         }
 
         .latin {
+            margin-top: 4px;;
+            display: block;
             font-family: $italics;
-            font-size: 0.85rem;
+            font-size: 0.875rem;
             letter-spacing: 0.025rem;
-            color: $card-color-alt;
+            line-height: 1.25;
+            color: $secondary;
         }
 
         .specs {

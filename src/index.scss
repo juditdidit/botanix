@@ -1,5 +1,7 @@
 @import 'styles/variables';
 
 body {
+    font-family: $font-family;
     background-color: $body-bg;
+    background-image: url('./images/background.jpg');
 }

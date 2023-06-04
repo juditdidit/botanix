@@ -1,4 +1,5 @@
 import "./App.scss";
+import { CatIcon, DogIcon, KidIcon } from "./Icons.js";
 
 const plants = [
     {
@@ -18,8 +19,8 @@ const plants = [
     },
     {
         id: 2,
-        name: "Bethany",
-        latin: "Pothos; Epipremmum aureum",
+        name: "Bethany the Golden Pothos",
+        latin: "Epipremmum aureum",
         location: "Bookshelf",
         light: "bright, indirect",
         water: "moderate",
@@ -60,11 +61,15 @@ const plants = [
 ];
 
 function App() {
-    const plantList = plants.map((plant) => <PlantCard plant={plant} key={plant.id} />);
+    const plantList = plants.map((plant) => (
+        <PlantCard plant={plant} key={plant.id} />
+    ));
 
     return (
         <main>
             <div className="container">
+                <h1>Botanika</h1>
+                <span className="subtitle">A Botanical Journal</span>
                 <div className="plant-list">{plantList}</div>
             </div>
         </main>
@@ -72,9 +77,15 @@ function App() {
 }
 
 function PlantCard({ plant }) {
-    const toxicityList = Object.keys(plant.toxicity).map(icon => {
+    const toxicityList = Object.keys(plant.toxicity).map((icon) => {
         if (plant.toxicity[icon]) {
-            return <span key={icon}>{icon}</span>
+            return (
+                <span key={icon}>
+                    {icon === "cats" && <CatIcon />}
+                    {icon === "dogs" && <DogIcon />}
+                    {icon === "kids" && <KidIcon />}
+                </span>
+            );
         } else {
             return null;
         }
@@ -92,13 +103,11 @@ function PlantCard({ plant }) {
                 <em className="latin">{plant.latin}</em>
 
                 <div className="specs">
-                    <div className="toxicity">
-                        {toxicityList}
-                    </div>
-                    <div className="needs">
+                    <div className="toxicity">{toxicityList}</div>
+                    {/* <div className="needs">
                         <span className="water">{plant.water}</span>
                         <span className="light">{plant.light}</span>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

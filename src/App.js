@@ -95,7 +95,7 @@ function PlantCard({ plant }) {
         <div className="plant-card">
             <div
                 className="photo"
-                style={{ backgroundImage: `url(../images/${plant.photo})` }}
+                style={{ backgroundImage: `url(./images/${plant.photo})` }}
             ></div>
             <div className="main">
                 <small className="location">{plant.location}</small>

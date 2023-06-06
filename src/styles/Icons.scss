@@ -1,0 +1,21 @@
+@import 'variables';
+
+svg.toxicity {
+    display: block;
+    fill: $secondary;
+    height: 24px;
+}
+
+svg.add-plant,
+svg.add-image {
+    width: 40px;
+    height: 40px;
+}
+
+svg.add-plant {
+    fill: $body-bg;
+}
+
+svg.add-image {
+    fill: #D0C7BB;
+}

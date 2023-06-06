@@ -233,12 +233,24 @@ main {
         }
     }
 
-    button {
+    .submit {
         margin-top: 24px;
         background-color: $secondary;
+        font-size: 0.875rem;
         border-radius: 4px;
         border: none;
         padding: 10px 14px;
         color: $card-bg;
+        margin-right: 14px;
+    }
+
+    .cancel {
+        text-decoration: none;
+        color: $secondary;
+        font-family: $italics;
+        font-size: 0.75rem;
+        letter-spacing: 0.025rem;
+        font-weight: 400;
+        line-height: 1;
     }
 }

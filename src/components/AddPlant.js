@@ -90,11 +90,17 @@ export default function AddPlant() {
                         </label>
                     </div>
 
-                    <button type="button" onClick={savePlant}>
+                    <button
+                        type="button"
+                        className="submit"
+                        onClick={savePlant}
+                    >
                         Record this plant
                     </button>
 
-                    <Link to="/">Discard</Link>
+                    <Link to="/" className="cancel">
+                        Discard
+                    </Link>
                 </form>
             </div>
         </main>

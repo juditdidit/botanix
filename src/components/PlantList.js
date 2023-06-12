@@ -1,66 +1,7 @@
 import { Link } from "react-router-dom";
 import { AddPlantIcon, CatIcon, DogIcon, KidIcon } from "../Icons.js";
 
-const plants = [
-    {
-        id: 0,
-        name: "Monty",
-        latin: "Monstera deliciosa",
-        location: "Living room floor",
-        light: "bright, indirect",
-        water: "moderate",
-        soil: "good drainage",
-        toxicity: {
-            dogs: true,
-            cats: true,
-            kids: false,
-        },
-        photo: "monstera.jpg",
-    },
-    {
-        id: 1,
-        name: "Bethany the Golden Pothos",
-        latin: "Epipremmum aureum",
-        location: "Top of bookshelf",
-        light: "bright, indirect",
-        water: "moderate",
-        soil: "well-draining, rich",
-        toxicity: {
-            dogs: true,
-            cats: true,
-            kids: true,
-        },
-        photo: "pothos.jpg",
-    },
-    {
-        id: 2,
-        name: "Snek",
-        latin: "Dracaena trifasciata",
-        location: "Bedroom",
-        light: "any light",
-        water: "infrequent",
-        soil: "free-draining",
-        toxicity: {
-            dogs: true,
-            cats: true,
-            kids: false,
-        },
-        photo: "snakeplant.jpg",
-    },
-    {
-        id: 3,
-        name: "Arrowhead",
-        latin: "Syngonium podophyllum",
-        location: "Bedroom",
-        light: "bright, indirect",
-        water: "moderate",
-        soil: "light, fast-draining",
-        toxicity: {},
-        photo: "arrowhead.jpg",
-    },
-];
-
-export default function PlantList() {
+export default function PlantList({ plants }) {
     const plantList = plants.map((plant) => (
         <PlantCard key={plant.id} plant={plant} />
     ));
@@ -106,9 +47,13 @@ function PlantCard({ plant }) {
                 style={{ backgroundImage: `url(./images/${plant.photo})` }}
             ></div>
             <div className="main">
-                <small className="location">{plant.location}</small>
-                <div className="name">{plant.name}</div>
-                <em className="latin">{plant.latin}</em>
+                {/* {plant.location ?? (
+                    <small className="location">{plant.location}</small>
+                )}
+                {plant.name ?? <div className="name">{plant.name}</div>}
+                {plant.altName ?? (
+                    <em className="alternativeName">{plant.altName}</em>
+                )} */}
 
                 <div className="specs">
                     <div className="toxicity">{toxicityList}</div>

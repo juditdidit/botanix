@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AddImageIcon } from "../Icons";
 
-function savePlant() {
-    console.log("I clicked");
-}
-
-export default function AddPlant() {
+export default function AddPlant({ plantListLength, saveNewPlant }) {
+    let navigate = useNavigate();
     const [selectedPhoto, setSelectedPhoto] = useState();
     const [preview, setPreview] = useState();
+    const [plantName, setPlantName] = useState("");
+    const [plantLocation, setPlantLocation] = useState("");
+    const [alternativeName, setAlternativeName] = useState("");
 
     useEffect(() => {
         if (!selectedPhoto) {
@@ -32,6 +32,21 @@ export default function AddPlant() {
         setSelectedPhoto(e.target.files[0]);
     };
 
+    function savePlant() {
+        let newPlant = {
+            id: plantListLength + 1,
+            name: "",
+            altName: alternativeName,
+            location: plantLocation,
+            photo: "calathea.jpg",
+        };
+
+        saveNewPlant(newPlant);
+
+        // Go back to the plant list
+        navigate("/");
+    }
+
     return (
         <main>
             <div className="container">
@@ -43,17 +58,38 @@ export default function AddPlant() {
                         <div>
                             <label>
                                 <span className="label">Plant location</span>
-                                <input type="text" />
+                                <input
+                                    type="text"
+                                    name="plantLocation"
+                                    value={plantLocation}
+                                    onChange={(e) =>
+                                        setPlantLocation(e.target.value)
+                                    }
+                                />
                             </label>
 
                             <label>
                                 <span className="label">Plant Name</span>
-                                <input type="text" />
+                                <input
+                                    type="text"
+                                    name="plantName"
+                                    value={plantName}
+                                    onChange={(e) =>
+                                        setPlantName(e.target.value)
+                                    }
+                                />
                             </label>
 
                             <label>
                                 <span className="label">Alternative Name</span>
-                                <input type="text" />
+                                <input
+                                    type="text"
+                                    name="alternativeName"
+                                    value={alternativeName}
+                                    onChange={(e) =>
+                                        setAlternativeName(e.target.value)
+                                    }
+                                />
                                 <small>
                                     Your plant's Latin name, or any other
                                     alternative name you'd like to display.

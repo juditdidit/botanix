@@ -35,10 +35,11 @@ export default function AddPlant({ plantListLength, saveNewPlant }) {
     function savePlant() {
         let newPlant = {
             id: plantListLength + 1,
-            name: "",
+            name: plantName,
             altName: alternativeName,
             location: plantLocation,
             photo: "calathea.jpg",
+            toxicity: {},
         };
 
         saveNewPlant(newPlant);

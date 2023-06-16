@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/botanix/static/css/main.8aa36414.css",
-    "main.js": "/botanix/static/js/main.40a807ce.js",
+    "main.js": "/botanix/static/js/main.b8289ef6.js",
     "static/media/card-background.jpg": "/botanix/static/media/card-background.94967c6c54a3fe10882a.jpg",
     "static/media/background.jpg": "/botanix/static/media/background.31556c341dfaf8501a73.jpg",
     "index.html": "/botanix/index.html",
     "main.8aa36414.css.map": "/botanix/static/css/main.8aa36414.css.map",
-    "main.40a807ce.js.map": "/botanix/static/js/main.40a807ce.js.map"
+    "main.b8289ef6.js.map": "/botanix/static/js/main.b8289ef6.js.map"
   },
   "entrypoints": [
     "static/css/main.8aa36414.css",
-    "static/js/main.40a807ce.js"
+    "static/js/main.b8289ef6.js"
   ]
 }

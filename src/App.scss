@@ -12,7 +12,7 @@ main {
 }
 
 .container {
-    // width: $card-size * 2 + $gutter;
+    width: ($card-size + $gutter) * 4 - $gutter;
     padding: 0 $gutter;
     margin: auto;
 }
@@ -104,11 +104,11 @@ main {
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             font-size: 1.875rem;
-            line-height: 1;
+            line-height: 2.125rem;
             overflow: hidden;
 
             // fallback for line-clamp
-            max-height: 1.875rem * 2;
+            max-height: 2.125rem * 2;
         }
 
         .alternativeName {

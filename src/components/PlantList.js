@@ -27,14 +27,13 @@ export default function PlantList({ plants }) {
 function PlantCard({ plant }) {
     const toxicityList = Object.keys(plant.toxicity).map((icon) => {
         if (plant.toxicity[icon]) {
-            return (
-                // TODO: address "unique key" warning
-                <>
-                    {icon === "dogs" && <DogIcon key={icon} />}
-                    {icon === "cats" && <CatIcon key={icon} />}
-                    {icon === "kids" && <KidIcon key={icon} />}
-                </>
-            );
+            if (icon === "cats") {
+                return <CatIcon key={icon} />;
+            } else if (icon === "dogs") {
+                return <DogIcon key={icon} />;
+            } else {
+                return <KidIcon key={icon} />;
+            }
         } else {
             return null;
         }

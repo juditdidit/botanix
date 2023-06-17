@@ -8,7 +8,7 @@ export default function PlantList({ plants }) {
 
     return (
         <main>
-            <div className="container">
+            <div id="plant-list" className="container">
                 <div className="heading">
                     <div>
                         <h1>Botanix</h1>

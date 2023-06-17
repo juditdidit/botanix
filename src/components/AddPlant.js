@@ -50,12 +50,40 @@ export default function AddPlant({ plantListLength, saveNewPlant }) {
 
     return (
         <main>
-            <div className="container">
+            <div id="add-plant" className="container">
                 <div className="heading">
                     <h1>Add a new plant</h1>
                 </div>
                 <form className="add-form">
                     <div className="wrapper">
+                        <label className="upload-image">
+                            <span className="label">Add a photo</span>
+
+                            {preview ? (
+                                <div
+                                    className="preview"
+                                    style={{
+                                        backgroundImage: `url(${preview})`,
+                                    }}
+                                ></div>
+                            ) : (
+                                <div className="uploader">
+                                    <div className="wrapper">
+                                        <AddImageIcon />
+                                        <small>
+                                            Click here to upload a photo
+                                        </small>
+                                    </div>
+                                </div>
+                            )}
+
+                            <input
+                                type="file"
+                                onChange={addPhoto}
+                                accept="image/*"
+                            />
+                        </label>
+
                         <div>
                             <label>
                                 <span className="label">Plant location</span>
@@ -97,34 +125,6 @@ export default function AddPlant({ plantListLength, saveNewPlant }) {
                                 </small>
                             </label>
                         </div>
-
-                        <label className="upload-image">
-                            <span className="label">Add a photo</span>
-
-                            {preview ? (
-                                <div
-                                    className="preview"
-                                    style={{
-                                        backgroundImage: `url(${preview})`,
-                                    }}
-                                ></div>
-                            ) : (
-                                <div className="uploader">
-                                    <div className="wrapper">
-                                        <AddImageIcon />
-                                        <small>
-                                            Click here to upload a photo
-                                        </small>
-                                    </div>
-                                </div>
-                            )}
-
-                            <input
-                                type="file"
-                                onChange={addPhoto}
-                                accept="image/*"
-                            />
-                        </label>
                     </div>
 
                     <button

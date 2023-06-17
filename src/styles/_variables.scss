@@ -14,3 +14,7 @@ $card-bg: #F2F2F2;
 $card-color: $body-color;
 
 $card-radius: 12px;
+
+$screen-sm: ($card-size + $gutter) * 2 + $gutter;
+$screen-md: ($card-size + $gutter) * 3 + $gutter;
+$screen-lg: ($card-size + $gutter) * 4 + $gutter;

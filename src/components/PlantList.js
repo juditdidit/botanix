@@ -47,11 +47,16 @@ function PlantCard({ plant }) {
                 style={{ backgroundImage: `url(./images/${plant.photo})` }}
             ></div>
             <div className="main">
-                <small className="location">{plant.location}</small>
-                <div className="name">{plant.name}</div>
-                <em className="alternativeName">{plant.altName}</em>
+                {plant.location && (
+                    <small className="location">{plant.location}</small>
+                )}
+                {plant.name && <div className="name">{plant.name}</div>}
+                {plant.altName && (
+                    <em className="alternativeName">{plant.altName}</em>
+                )}
                 <div className="specs">
                     <div className="toxicity">{toxicityList}</div>
+
                     {/* <div className="needs">
                         <span className="water">{plant.water}</span>
                         <span className="light">{plant.light}</span>

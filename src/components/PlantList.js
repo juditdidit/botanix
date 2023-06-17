@@ -40,7 +40,7 @@ function PlantCard({ plant }) {
     });
 
     return (
-        <div className="plant-card">
+        <Link to={`/plants/${plant.id}`} className="plant-card">
             <div
                 className="photo"
                 style={{ backgroundImage: `url(./images/${plant.photo})` }}
@@ -62,6 +62,6 @@ function PlantCard({ plant }) {
                     </div> */}
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }

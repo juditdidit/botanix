@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.scss";
 import AddPlant from "./components/AddPlant";
 import PlantDetails from "./components/PlantDetails";
@@ -83,7 +83,8 @@ function App() {
                     />
                 }
             />
-            <Route path="/details" element={<PlantDetails />} />
+            <Route path="/plants/:id" element={<PlantDetails />} />
+            <Route path="*" element={<Navigate replace to="/" />} />
         </Routes>
     );
 }

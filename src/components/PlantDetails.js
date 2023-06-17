@@ -1,3 +1,15 @@
+import { useParams } from "react-router-dom";
+
 export default function PlantDetails() {
-    return <h1>plant details</h1>;
+    const { id } = useParams();
+
+    return (
+        <main>
+            <div id="plant-details" className="container">
+                <div className="heading">
+                    <h1>Details for {id}</h1>
+                </div>
+            </div>
+        </main>
+    );
 }

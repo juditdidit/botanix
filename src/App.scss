@@ -11,6 +11,117 @@ main {
     padding-top: 40px;
 }
 
+.container {
+    padding: 0 $gutter;
+    margin: auto;
+
+    @media (min-width: $screen-sm) {
+        width: $card-size * 2 + $gutter;
+    }
+
+    @media (min-width: $screen-md) {
+        width: ($card-size + $gutter) * 3 - $gutter;
+    }
+
+    @media (min-width: $screen-lg) {
+        width: ($card-size + $gutter) * 4 - $gutter;
+    }
+}
+
+
+#plant-list {
+    .plant-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        gap: $gutter;
+    }
+
+    .plant-card {
+        background-color: $card-bg;
+        background-image: url('./images/card-background.jpg');
+        border-radius: $card-radius;
+        padding-bottom: 38px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: $box-shadow;
+        cursor: pointer;
+    }
+
+    @media (min-width: $screen-sm) {
+        .plant-list {
+            grid-template-columns: repeat(auto-fit, $card-size);
+        }
+
+        .plant-card {
+            width: $card-size;
+            height: 328px;
+            padding-bottom: 0;
+        }
+    }
+
+    .plant-card {
+        .photo {
+            width: 100%;
+            padding-bottom: 60%;
+            background-size: cover;
+            background-color: #59684A;
+            background-position: center;
+            position: relative;
+        }
+
+        .main {
+            padding: 14px;
+            color: $card-color;
+
+            .location {
+                margin-bottom: 2px;
+                display: block;
+                text-transform: uppercase;
+                font-size: 0.625rem;
+                line-height: 1;
+                letter-spacing: 0.025rem;
+                font-weight: 600;
+            }
+
+            .name {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                font-size: 1.875rem;
+                line-height: 2.125rem;
+                overflow: hidden;
+    
+                // fallback for line-clamp
+                max-height: 2.125rem * 2;
+            }
+
+            .alternativeName {
+                margin-top: 6px;
+                display: block;
+                font-family: $italics;
+                font-size: 0.875rem;
+                letter-spacing: 0.025rem;
+                line-height: 1rem;
+                color: $secondary;
+            }
+
+            .specs {
+                position: absolute;
+                bottom: 14px;
+
+                .toxicity {
+                    display: flex;
+
+                    svg + svg {
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 #add-plant {
     &.container {
         max-width: $screen-sm;
@@ -154,23 +265,6 @@ main {
     }
 }
 
-.container {
-    padding: 0 $gutter;
-    margin: auto;
-
-    @media (min-width: $screen-sm) {
-        width: $card-size * 2 + $gutter;
-    }
-
-    @media (min-width: $screen-md) {
-        width: ($card-size + $gutter) * 3 - $gutter;
-    }
-
-    @media (min-width: $screen-lg) {
-        width: ($card-size + $gutter) * 4 - $gutter;
-    }
-}
-
 .heading {
     display: flex;
     justify-content: space-between;
@@ -205,87 +299,6 @@ main {
 
         &:hover {
             background-color: lighten($secondary, 10%);
-        }
-    }
-}
-
-.plant-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, $card-size);
-    justify-content: center;
-    gap: $gutter;
-}
-
-.plant-card {
-    background-color: $card-bg;
-    background-image: url('./images/card-background.jpg');
-    border-radius: $card-radius;
-    width: $card-size;
-    height: 328px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: $box-shadow;
-
-    &:hover {
-        // box-shadow: inset 0px 0px 0px 4px pink;
-    }
-
-    .photo {
-        width: 100%;
-        padding-bottom: 60%;
-        background-size: cover;
-        background-color: #59684A;
-        background-position: center;
-        position: relative;
-    }
-
-    .main {
-        padding: 14px;
-        color: $card-color;
-
-        .location {
-            margin-bottom: 2px;
-            display: block;
-            text-transform: uppercase;
-            font-size: 0.625rem;
-            line-height: 1;
-            letter-spacing: 0.025rem;
-            font-weight: 600;
-        }
-
-        .name {
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            font-size: 1.875rem;
-            line-height: 2.125rem;
-            overflow: hidden;
-
-            // fallback for line-clamp
-            max-height: 2.125rem * 2;
-        }
-
-        .alternativeName {
-            margin-top: 6px;
-            display: block;
-            font-family: $italics;
-            font-size: 0.875rem;
-            letter-spacing: 0.025rem;
-            line-height: 1rem;
-            color: $secondary;
-        }
-
-        .specs {
-            position: absolute;
-            bottom: 14px;
-
-            .toxicity {
-                display: flex;
-
-                svg + svg {
-                    margin-left: 10px;
-                }
-            }
         }
     }
 }
